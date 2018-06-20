@@ -29,7 +29,8 @@ public class Sistema implements ISistema
     }
 
     @Override
-    public Retorno destruirSistemaEmergencias() {
+    public Retorno destruirSistemaEmergencias() 
+    {
                 this.maxZonas = 0;
                 this.lc = null;
                 this.lm = null;
@@ -38,7 +39,8 @@ public class Sistema implements ISistema
     }
 
        @Override
-    public Retorno registrarMovil(String movilID, int zonaID) {
+    public Retorno registrarMovil(String movilID, int zonaID) 
+    {
     	Retorno retFinal = new Retorno(Retorno.Resultado.ERROR_1);
         Zona newZona = lz.buscarElementoPorId(zonaID);
         if(newZona != null)
@@ -56,9 +58,17 @@ public class Sistema implements ISistema
     } 
 
     @Override
-    public Retorno deshabilitarMovil(String movilID) {
+    public Retorno deshabilitarMovil(String movilID) 
+    {
        Retorno retFinal = new Retorno(Retorno.Resultado.ERROR_1);
- 
+       //en lista general de moviles.
+       //primero chequeo si existe el movilid..
+       Movil auxMov = lm.buscarElementoPorString(movilID);
+       if (auxMov!=null)
+       {
+           //si entra aca el movil existe
+           
+       }
         return retFinal;
        }
        
